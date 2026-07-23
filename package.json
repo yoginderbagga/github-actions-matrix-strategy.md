@@ -1,0 +1,11 @@
+{
+  "name": "matrix-test-app",
+  "version": "1.0.0",
+  "description": "Simple app to test GitHub Actions matrix",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo '✅ All tests passed successfully on this OS!'"
+  },
+  "dependencies": {}
+}
+
