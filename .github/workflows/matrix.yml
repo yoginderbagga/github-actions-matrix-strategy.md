@@ -1,0 +1,36 @@
+# Goal: Create a job to run on multiple OS ( Ubuntu and Windows Github runner) environment
+
+name: Cross Operating System Matrix Demonstration
+
+# first define the trigger section like push, pull request, schedule etc
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+    
+# second define the jobs you want to run
+jobs:
+  test-application:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
+
+
+      - name: Setup a Node.js 
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+
+      - name: Install and Run the app  
+        run: |
+          npm install
+          npm test
+
+
