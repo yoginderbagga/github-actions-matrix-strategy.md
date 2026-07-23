@@ -5,7 +5,7 @@ name: Cross Operating System Matrix Demonstration
 # first define the trigger section like push, pull request, schedule etc
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
   workflow_dispatch:
 
     
