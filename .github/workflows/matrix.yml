@@ -15,12 +15,22 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
       - name: Checkout the code
         uses: actions/checkout@v4
 
+# NEW STEP: Prints the active OS version and image version
+
+      - name: Display Runner OS Version Details
+        shell: bash
+        run: |
+          echo "======================================================"
+          echo "Matrix OS Label: ${{ matrix.os }}"
+          echo "Operating System Image: $ImageOS"
+          echo "Exact Image Build Version: $ImageVersion"
+          echo "======================================================" 
 
       - name: Setup a Node.js 
         uses: actions/setup-node@v4
