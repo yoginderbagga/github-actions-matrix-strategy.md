@@ -31,6 +31,9 @@ jobs:
           echo "Operating System Image: $ImageOS"
           echo "Exact Image Build Version: $ImageVersion"
           echo "Display Docker Version : $(docker --version)"
+          echo "Display Python Version: $(python --version)"
+          echo "Display Node Version: $(node --version)"
+          echo "Display Git Version: $(git --version)"
           echo "======================================================" 
 
       - name: Setup a Node.js 
