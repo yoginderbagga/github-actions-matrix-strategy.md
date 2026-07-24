@@ -30,6 +30,7 @@ jobs:
           echo "Matrix OS Label: ${{ matrix.os }}"
           echo "Operating System Image: $ImageOS"
           echo "Exact Image Build Version: $ImageVersion"
+          echo "Display Docker Version : $(docker --version)"
           echo "======================================================" 
 
       - name: Setup a Node.js 
